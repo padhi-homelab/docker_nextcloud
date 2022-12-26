@@ -15,7 +15,6 @@ RUN apt-get update -yq \
  && apt-get install -yq build-essential \
                         cmake \
                         libbz2-dev libopenblas-dev libx11-dev \
-                        wget \
  && docker-php-ext-install bz2 \
  && cd /tmp \
  && tar xf dlib.tar.gz \
@@ -48,5 +47,7 @@ COPY --from=builder \
 
 RUN apt-get update -yq \
  && apt-get install -yq libopenblas-base \
+                        libbz2-dev \
+ && docker-php-ext-install bz2 \
  && echo "extension=pdlib.so" > /usr/local/etc/php/conf.d/pdlib.ini \
  && echo memory_limit=1024M > /usr/local/etc/php/conf.d/memory-limit.ini
