@@ -45,6 +45,9 @@ COPY --from=builder \
      /usr/local/lib/php/extensions/no-debug-non-zts-20210902/pdlib.so \
      /usr/local/lib/php/extensions/no-debug-non-zts-20210902/
 
+COPY docker-entrypoint.sh \
+     /docker-entrypoint.sh
+
 RUN apt-get update -yq \
  && apt-get install -yq --no-install-recommends \
                         ffmpeg \
