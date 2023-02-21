@@ -58,3 +58,5 @@ RUN apt-get update -yq \
  && docker-php-ext-install bz2 \
  && echo "extension=pdlib.so" > /usr/local/etc/php/conf.d/pdlib.ini \
  && echo memory_limit=1024M > /usr/local/etc/php/conf.d/memory-limit.ini
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
