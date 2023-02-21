@@ -60,3 +60,4 @@ RUN apt-get update -yq \
  && echo memory_limit=1024M > /usr/local/etc/php/conf.d/memory-limit.ini
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["apache2-foreground"]

@@ -28,4 +28,4 @@ else
 fi
 
 echo "Launching real entrypoint."
-exec /entrypoint.sh
+exec /entrypoint.sh "$@"
