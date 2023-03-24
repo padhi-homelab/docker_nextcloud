@@ -1,4 +1,4 @@
-ARG NEXTCLOUD_VERSION=25.0.4
+ARG NEXTCLOUD_VERSION=26.0.0
 
 
 FROM nextcloud:$NEXTCLOUD_VERSION as builder
@@ -7,7 +7,7 @@ ARG DLIB_VERSION=v19.24
 ADD https://github.com/davisking/dlib/archive/refs/tags/$DLIB_VERSION.tar.gz \
     /tmp/dlib.tar.gz
 
-ARG PDLIB_VERSION=v1.0.2
+ARG PDLIB_VERSION=v1.1.0
 ADD https://github.com/goodspb/pdlib/archive/refs/tags/$PDLIB_VERSION.tar.gz \
     /tmp/pdlib.tar.gz
 
