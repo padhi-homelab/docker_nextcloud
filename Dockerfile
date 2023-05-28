@@ -1,9 +1,9 @@
-ARG NEXTCLOUD_VERSION=26.0.1
+ARG NEXTCLOUD_VERSION=26.0.2
 
 
-FROM nextcloud:$NEXTCLOUD_VERSION as builder
+FROM nextcloud:$NEXTCLOUD_VERSION AS builder
 
-ARG DLIB_VERSION=v19.24
+ARG DLIB_VERSION=v19.24.2
 ADD https://github.com/davisking/dlib/archive/refs/tags/$DLIB_VERSION.tar.gz \
     /tmp/dlib.tar.gz
 
@@ -42,8 +42,8 @@ COPY --from=builder \
      /usr/local/lib
 
 COPY --from=builder \
-     /usr/local/lib/php/extensions/no-debug-non-zts-20210902/pdlib.so \
-     /usr/local/lib/php/extensions/no-debug-non-zts-20210902/
+     /usr/local/lib/php/extensions/no-debug-non-zts-20220829/pdlib.so \
+     /usr/local/lib/php/extensions/no-debug-non-zts-20220829/
 
 COPY docker-entrypoint.sh \
      /docker-entrypoint.sh
