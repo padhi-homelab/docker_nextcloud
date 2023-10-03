@@ -1,4 +1,4 @@
-ARG NEXTCLOUD_VERSION=27.0.1
+ARG NEXTCLOUD_VERSION=27.1.1
 
 
 FROM nextcloud:$NEXTCLOUD_VERSION AS builder
@@ -22,7 +22,7 @@ RUN apt-get update -yq \
  && cd dlib/dlib \
  && mkdir build \
  && cd build \
- && cmake -DBUILD_SHARED_LIBS=ON --config Release .. \
+ && cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release .. \
  && make \
  && make install \
  && cd /tmp \
@@ -53,7 +53,7 @@ RUN apt-get update -yq \
                         ffmpeg \
                         ghostscript \
                         libmagickcore-6.q16-6-extra \
-                        libopenblas-base \
+                        libopenblas0 \
                         libbz2-dev \
  && docker-php-ext-install bz2 \
  && echo "extension=pdlib.so" > /usr/local/etc/php/conf.d/pdlib.ini \
