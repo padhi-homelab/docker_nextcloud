@@ -1,6 +1,6 @@
 # docker_nextcloud
 
-[![build status](https://img.shields.io/github/actions/workflow/status/padhi-homelab/docker_nextcloud/docker-release.yml?label=BUILD&branch=main&logo=github&logoWidth=24&style=flat-square)](https://github.com/padhi-homelab/docker_nextcloud/actions?query=workflow%3A%22Docker+CI+Release%22)
+[![build status](https://img.shields.io/github/actions/workflow/status/padhi-homelab/docker_nextcloud/docker-release.yml?label=BUILD&branch=main&logo=github&logoWidth=24&style=flat-square)](https://github.com/padhi-homelab/docker_nextcloud/actions/workflows/docker-release.yml)
 [![testing size](https://img.shields.io/docker/image-size/padhihomelab/nextcloud/testing?label=SIZE%20%5Btesting%5D&logo=docker&logoColor=skyblue&logoWidth=24&style=flat-square)](https://hub.docker.com/r/padhihomelab/nextcloud/tags)
 [![latest size](https://img.shields.io/docker/image-size/padhihomelab/nextcloud/latest?label=SIZE%20%5Blatest%5D&logo=docker&logoColor=skyblue&logoWidth=24&style=flat-square)](https://hub.docker.com/r/padhihomelab/nextcloud/tags)
   
