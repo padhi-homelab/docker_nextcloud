@@ -1,7 +1,8 @@
 # docker_nextcloud
 
-[![build status](https://img.shields.io/github/actions/workflow/status/padhi-homelab/docker_nextcloud/docker-release.yml?label=BUILD&branch=main&logo=github&logoWidth=24&style=flat-square)](https://github.com/padhi-homelab/docker_nextcloud/actions/workflows/docker-release.yml)
+[![build status](https://img.shields.io/github/actions/workflow/status/padhi-homelab/docker_nextcloud/docker-release-latest.yml?label=BUILD&branch=main&logo=github&logoWidth=24&style=flat-square)](https://github.com/padhi-homelab/docker_nextcloud/actions/workflows/docker-release-latest.yml)
 [![testing size](https://img.shields.io/docker/image-size/padhihomelab/nextcloud/testing?label=SIZE%20%5Btesting%5D&logo=docker&logoColor=skyblue&logoWidth=24&style=flat-square)](https://hub.docker.com/r/padhihomelab/nextcloud/tags)
+[![latest-core size](https://img.shields.io/docker/image-size/padhihomelab/nextcloud/latest-core?label=SIZE%20%5Blatest-core%5D&logo=docker&logoWidth=24&style=flat-square)](https://hub.docker.com/r/padhihomelab/nextcloud/tags)
 [![latest size](https://img.shields.io/docker/image-size/padhihomelab/nextcloud/latest?label=SIZE%20%5Blatest%5D&logo=docker&logoColor=skyblue&logoWidth=24&style=flat-square)](https://hub.docker.com/r/padhihomelab/nextcloud/tags)
   
 [![latest version](https://img.shields.io/docker/v/padhihomelab/nextcloud/latest?label=LATEST&logo=linux-containers&logoWidth=20&labelColor=darkmagenta&color=gold&style=for-the-badge)](https://hub.docker.com/r/padhihomelab/nextcloud/tags)
@@ -9,13 +10,18 @@
 
 ---
 
-A [Debian]-based multiarch [nextcloud] Docker image with [ffmpeg], [Bzip2] and [Dlib PHP bindings] (for [facerecognition]).
+A [Debian]-based multiarch [nextcloud] Docker image with:
+  - disabled access logs,
+  - additional packages for preview generation,
+  - [PDlib] for [facerecognition]
 
 Supported platforms:
 
 |        386         |       amd64        |          arm/v6          |       arm/v7       |       arm64        |         ppc64le          |          s390x           |
 | :----------------: | :----------------: | :----------------------: | :----------------: | :----------------: | :----------------------: | :----------------------: |
 | :heavy_check_mark: | :heavy_check_mark: | :heavy_multiplication_x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_multiplication_x: | :heavy_multiplication_x: |
+
+_The `-core` images contain everything except PDlib packages._
 
 ## Usage
 
@@ -32,10 +38,8 @@ docker run -p 80:80 -it padhihomelab/nextcloud
 
 Serves [nextcloud] on port 80.
 
-[Bzip2]:             https://www.php.net/manual/en/book.bzip2.php
 [Debian]:            https://www.debian.org/
-[Dlib PHP bindings]: https://github.com/goodspb/pdlib
+[PDlib]:             https://github.com/goodspb/pdlib
 [docker compose]:    https://docs.docker.com/compose/
 [facerecognition]:   https://github.com/nextcloud/nextcloud
-[ffmpeg]:            https://ffmpeg.org/
 [nextcloud]:         https://github.com/nextcloud/server

@@ -52,6 +52,7 @@ RUN apt-get update -yq \
  && apt-get install -yq --no-install-recommends \
                         ffmpeg \
                         ghostscript \
+                        iproute2 \
                         libmagickcore-6.q16-6-extra \
                         libopenblas0 \
                         libbz2-dev \

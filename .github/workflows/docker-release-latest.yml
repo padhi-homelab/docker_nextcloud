@@ -1,4 +1,4 @@
-name: Docker CI Release
+name: Docker CI Release (Latest)
 
 on:
   pull_request:
