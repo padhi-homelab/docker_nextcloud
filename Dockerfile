@@ -1,4 +1,4 @@
-ARG NEXTCLOUD_VERSION=29.0.5
+ARG NEXTCLOUD_VERSION=29.0.6
 
 
 FROM nextcloud:$NEXTCLOUD_VERSION AS builder
@@ -57,7 +57,10 @@ RUN apt-get update -yq \
                         libbz2-dev \
  && docker-php-ext-install bz2 \
  && echo "extension=pdlib.so" > /usr/local/etc/php/conf.d/pdlib.ini \
- && echo memory_limit=1024M > /usr/local/etc/php/conf.d/memory-limit.ini
+ && echo memory_limit=1024M > /usr/local/etc/php/conf.d/memory-limit.ini \
+ && ln -fs /dev/null /var/log/apache2/access.log \
+ && ln -fs /dev/null /var/log/apache2/other_vhosts_access.log \
+ && chown -R www-data:www-data /var/log/apache2
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["apache2-foreground"]
