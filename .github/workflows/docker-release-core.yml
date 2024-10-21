@@ -39,6 +39,7 @@ jobs:
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             VERSION=${GITHUB_REF#refs/tags/v}
             VERSION=${VERSION#_}
+            VERSION=${VERSION%%_*}
           fi
 
           TAGS="${DOCKER_IMAGE}:${VERSION}-core"
