@@ -1,4 +1,4 @@
-FROM nextcloud:30.0.1
+FROM nextcloud:30.0.2
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
