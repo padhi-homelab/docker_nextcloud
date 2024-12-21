@@ -1,9 +1,9 @@
-ARG NEXTCLOUD_VERSION=30.0.3
+ARG NEXTCLOUD_VERSION=30.0.4
 
 
 FROM nextcloud:$NEXTCLOUD_VERSION AS builder
 
-ARG DLIB_VERSION=v19.24.4
+ARG DLIB_VERSION=v19.24.6
 ADD https://github.com/davisking/dlib/archive/refs/tags/$DLIB_VERSION.tar.gz \
     /tmp/dlib.tar.gz
 
