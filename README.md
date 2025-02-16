@@ -1,7 +1,6 @@
 # docker_nextcloud
 
 [![build status](https://img.shields.io/github/actions/workflow/status/padhi-homelab/docker_nextcloud/docker-release-latest.yml?label=BUILD&branch=main&logo=github&logoWidth=24&style=flat-square)](https://github.com/padhi-homelab/docker_nextcloud/actions/workflows/docker-release-latest.yml)
-[![latest-core size](https://img.shields.io/docker/image-size/padhihomelab/nextcloud/latest-core?label=SIZE%20%5Blatest-core%5D&logo=docker&logoWidth=24&style=flat-square)](https://hub.docker.com/r/padhihomelab/nextcloud/tags)
 [![latest size](https://img.shields.io/docker/image-size/padhihomelab/nextcloud/latest?label=SIZE%20%5Blatest%5D&logo=docker&logoColor=skyblue&logoWidth=24&style=flat-square)](https://hub.docker.com/r/padhihomelab/nextcloud/tags)
   
 [![latest version](https://img.shields.io/docker/v/padhihomelab/nextcloud/latest?label=LATEST&logo=linux-containers&logoWidth=20&labelColor=darkmagenta&color=gold&style=for-the-badge)](https://hub.docker.com/r/padhihomelab/nextcloud/tags)
@@ -11,16 +10,14 @@
 
 A [Debian]-based multiarch [nextcloud] Docker image with:
   - disabled access logs,
-  - additional packages for preview generation,
-  - [PDlib] for [facerecognition]
+  - `iproute2` for correctly rendering server info page,
+  - additional packages for preview generation on PDF and media files.
 
 Supported platforms:
 
-|        386         |       amd64        |          arm/v6          |       arm/v7       |       arm64        |         ppc64le          |          s390x           |
-| :----------------: | :----------------: | :----------------------: | :----------------: | :----------------: | :----------------------: | :----------------------: |
-| :heavy_check_mark: | :heavy_check_mark: | :heavy_multiplication_x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_multiplication_x: | :heavy_multiplication_x: |
-
-_The `-core` images contain everything except PDlib packages._
+|        386         |       amd64        |       arm/v6       |       arm/v7       |       arm64        |      ppc64le       |       s390x        |
+| :----------------: | :----------------: | :----------------: | :----------------: | :----------------: | :----------------: | :----------------: |
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 
 ## Usage
 
