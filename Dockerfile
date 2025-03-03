@@ -1,7 +1,5 @@
 FROM nextcloud:31.0.0
 
-COPY docker-entrypoint.sh /docker-entrypoint.sh
-
 RUN apt-get update -yq \
  && apt-get install -yq --no-install-recommends \
                         ffmpeg \
@@ -12,6 +10,3 @@ RUN apt-get update -yq \
  && ln -fs /dev/null /var/log/apache2/access.log \
  && ln -fs /dev/null /var/log/apache2/other_vhosts_access.log \
  && chown -R www-data:www-data /var/log/apache2
-
-ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["apache2-foreground"]
