@@ -1,4 +1,4 @@
-FROM nextcloud:33.0.3
+FROM nextcloud:33.0.5
 
 RUN apt-get update -yq \
  && apt-get install -yq --no-install-recommends \
